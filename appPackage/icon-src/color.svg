@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192">
+  <rect width="192" height="192" fill="#2b3a67"/>
+  <!-- step 1: a request/document -->
+  <rect x="22" y="76" width="40" height="40" rx="7" fill="#ffffff"/>
+  <rect x="30" y="86" width="24" height="4" rx="2" fill="#2b3a67"/>
+  <rect x="30" y="95" width="24" height="4" rx="2" fill="#2b3a67"/>
+  <rect x="30" y="104" width="15" height="4" rx="2" fill="#2b3a67"/>
+  <!-- arrow 1 -->
+  <path d="M68 96 H84" stroke="#b9c3e6" stroke-width="5" stroke-linecap="round"/>
+  <path d="M79 89 L86 96 L79 103" fill="none" stroke="#b9c3e6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- step 2: review -->
+  <circle cx="108" cy="96" r="20" fill="#ffffff"/>
+  <circle cx="108" cy="96" r="7" fill="#2b3a67"/>
+  <!-- arrow 2 -->
+  <path d="M134 96 H146" stroke="#b9c3e6" stroke-width="5" stroke-linecap="round"/>
+  <path d="M141 89 L148 96 L141 103" fill="none" stroke="#b9c3e6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- step 3: approved -->
+  <circle cx="168" cy="96" r="16" fill="#3fc23f"/>
+  <path d="M160 96 L166 102 L177 90" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
