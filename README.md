@@ -82,3 +82,12 @@ Provider `e1414a49-1a3e-4bba-94b4-e27134577476`, API ID URI `api://auth-am-e1414
 
 Registering it also creates the Entra resource `api://auth-am-<id>`; the app
 `359906f4` must be allowed to receive tokens for it, same as for the old ones.
+
+## Scaling
+
+`infra/scale.json` is the saved policy for all three Container Apps:
+`minReplicas = 0`, max 3, an HTTP rule, and a cron rule keeping one replica
+running Monday–Friday 08:00–20:00 (Europe/Bucharest); outside that window the
+app scales to zero and the first request starts it cold. `scripts/Set-ContainerAppScale.ps1`
+checks each app against it (`-Apply` fixes any drift). Weekends are not covered —
+change `1-5` in the cron `start`/`end` to `*` for every day.

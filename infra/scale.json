@@ -1,0 +1,24 @@
+{
+  "minReplicas": 0,
+  "maxReplicas": 3,
+  "cooldownPeriod": 300,
+  "pollingInterval": 30,
+  "rules": [
+    {
+      "name": "http-default",
+      "http": { "metadata": { "concurrentRequests": "10" } }
+    },
+    {
+      "name": "business-hours",
+      "custom": {
+        "type": "cron",
+        "metadata": {
+          "timezone": "Europe/Bucharest",
+          "start": "0 8 * * 1-5",
+          "end": "0 20 * * 1-5",
+          "desiredReplicas": "1"
+        }
+      }
+    }
+  ]
+}
