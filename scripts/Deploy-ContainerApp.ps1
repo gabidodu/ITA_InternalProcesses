@@ -102,7 +102,8 @@ $config = @{
 
 $tmp = Join-Path ([IO.Path]::GetTempPath()) ("$AppName-" + [guid]::NewGuid().ToString("N") + ".json")
 try {
-    $config | ConvertTo-Json -Depth 20 | Set-Content -Path $tmp -Encoding utf8
+    # No BOM: Windows PowerShell 5.1's "-Encoding utf8" adds one, which `az --yaml` rejects.
+    [IO.File]::WriteAllText($tmp, ($config | ConvertTo-Json -Depth 20), (New-Object Text.UTF8Encoding $false))
     Invoke-Az containerapp create -n $AppName -g $ResourceGroup --subscription $Subscription --yaml $tmp --query "properties.configuration.ingress.fqdn" -o tsv
 }
 finally {

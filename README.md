@@ -67,7 +67,8 @@ client tenant. A module is enabled when all its columns are filled:
 5. Run `Enable-ExpenseModule.ps1` for the IT ASSIST tenant.
 6. Upload `appPackage` (version 1.1.0) to replace the Leave Request app;
    retire the Expense Reports app (`bf70ae37…`).
-7. Keep the two old Container Apps running a few weeks: emails already sent
+7. Apply the production scale profile (see Scaling).
+8. Keep the two old Container Apps running a few weeks: emails already sent
    point at their hosts and their originators.
 
 ### The new Actionable Messages originator
@@ -85,9 +86,16 @@ Registering it also creates the Entra resource `api://auth-am-<id>`; the app
 
 ## Scaling
 
-`infra/scale.json` is the saved policy for all three Container Apps:
-`minReplicas = 0`, max 3, an HTTP rule, and a cron rule keeping one replica
-running Monday–Friday 08:00–20:00 (Europe/Bucharest); outside that window the
-app scales to zero and the first request starts it cold. `scripts/Set-ContainerAppScale.ps1`
-checks each app against it (`-Apply` fixes any drift). Weekends are not covered —
-change `1-5` in the cron `start`/`end` to `*` for every day.
+Two saved profiles, both `minReplicas = 0` (max 3, HTTP rule):
+
+- `infra/scale.testing.json` — scale to zero whenever idle, no schedule. **Active
+  now on all three apps** while the unified app is being tested.
+- `infra/scale.production.json` — the same plus a cron rule keeping one replica
+  running Monday–Friday 08:00–20:00 (Europe/Bucharest); outside that window the
+  app scales to zero and the first request starts it cold. **Apply when going
+  live** (weekends are not covered — change `1-5` to `*` in the cron
+  `start`/`end` for every day).
+
+`scripts/Set-ContainerAppScale.ps1 -Profile testing|production` checks the apps
+against a profile (`-Apply` fixes any drift). Going live:
+`./scripts/Set-ContainerAppScale.ps1 -Profile production -Apply`.

@@ -1,0 +1,12 @@
+{
+  "minReplicas": 0,
+  "maxReplicas": 3,
+  "cooldownPeriod": 300,
+  "pollingInterval": 30,
+  "rules": [
+    {
+      "name": "http-default",
+      "http": { "metadata": { "concurrentRequests": "10" } }
+    }
+  ]
+}

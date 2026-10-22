@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Applies infra/scale.json to the Container Apps, and reports drift.
+    Applies a scaling profile from infra/ to the Container Apps, and reports drift.
 
 .DESCRIPTION
     The scaling policy: minReplicas = 0 (scale to zero when idle), plus a cron
@@ -8,22 +8,27 @@
     so the business-hours cold start never hits users. Outside those hours the
     app scales to zero; the first request after that starts it from cold.
 
-    Source of truth is infra/scale.json. Without -Apply the script only reads
+    Source of truth. Without -Apply the script only reads
     each app's current scale and says whether it matches; nothing is written.
 
+.PARAMETER Profile
+    "production" (default) or "testing".
+
 .PARAMETER Apply
-    Write infra/scale.json to the apps whose scale differs.
+    Write the profile to the apps whose scale differs.
 
 .PARAMETER Apps
     Apps to check/update. Defaults to the three apps in the shared environment.
 
 .EXAMPLE
-    ./Set-ContainerAppScale.ps1            # check only
-    ./Set-ContainerAppScale.ps1 -Apply     # fix any drift
-    ./Set-ContainerAppScale.ps1 -Apply -Apps ca-internal-processes
+    ./Set-ContainerAppScale.ps1 -Profile testing              # check only
+    ./Set-ContainerAppScale.ps1 -Profile testing -Apply       # scale to zero, no schedule
+    ./Set-ContainerAppScale.ps1 -Profile production -Apply    # going live: add the 8-20 rule
 #>
 [CmdletBinding()]
 param(
+    [ValidateSet("production", "testing")]
+    [string]$Profile = "production",
     [switch]$Apply,
     [string[]]$Apps = @("ca-leaverequestforteams", "ca-expensereportforteams", "ca-internal-processes"),
     [string]$ResourceGroup = "rg-internal-processes",
@@ -31,7 +36,7 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
-$desiredPath = Join-Path $PSScriptRoot "..\infra\scale.json"
+$desiredPath = Join-Path $PSScriptRoot "..\infra\scale.$Profile.json"
 $desired = Get-Content $desiredPath -Raw | ConvertFrom-Json
 
 function Invoke-Az {
@@ -56,17 +61,18 @@ $want = Get-Canonical $desired
 foreach ($app in $Apps) {
     $current = (Invoke-Az containerapp show -n $app -g $ResourceGroup --subscription $Subscription --query "properties.template.scale" -o json) -join "`n" | ConvertFrom-Json
     if ((Get-Canonical $current) -eq $want) {
-        Write-Host "[ok]    $app matches infra/scale.json" -ForegroundColor Green
+        Write-Host "[ok]    $app matches the $Profile profile" -ForegroundColor Green
         continue
     }
-    Write-Host "[drift] $app differs from infra/scale.json" -ForegroundColor Yellow
+    Write-Host "[drift] $app differs from the $Profile profile" -ForegroundColor Yellow
     Write-Host "        current: min $($current.minReplicas), max $($current.maxReplicas), rules: $((($current.rules | ForEach-Object { $_.name }) -join ', '))"
     if (-not $Apply) { continue }
 
     $yaml = @{ properties = @{ template = @{ scale = $desired } } }
     $tmp = Join-Path ([IO.Path]::GetTempPath()) ("scale-$app-" + [guid]::NewGuid().ToString("N") + ".json")
     try {
-        $yaml | ConvertTo-Json -Depth 20 | Set-Content -Path $tmp -Encoding utf8
+        # No BOM: Windows PowerShell 5.1's "-Encoding utf8" adds one, which `az --yaml` rejects.
+        [IO.File]::WriteAllText($tmp, ($yaml | ConvertTo-Json -Depth 20), (New-Object Text.UTF8Encoding $false))
         Invoke-Az containerapp update -n $app -g $ResourceGroup --subscription $Subscription --yaml $tmp --query "properties.provisioningState" -o tsv | Out-Null
         Write-Host "[fixed] $app" -ForegroundColor Green
     }
