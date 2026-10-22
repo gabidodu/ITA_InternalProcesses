@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2022/09/ProvisioningSchema">
+  <pnp:Preferences Generator="PnP.Framework, Version=1.18.0.0, Culture=neutral, PublicKeyToken=0d501f89f11b748c" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-724F339714A3430CA8311832D6D073D3">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-724F339714A3430CA8311832D6D073D3" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
+      <pnp:Lists>
+        <pnp:ListInstance Title="LR_LeaveSetup" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/LR_LeaveSetup" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="50" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/LR_LeaveSetup/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/LR_LeaveSetup/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/LR_LeaveSetup/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{52B5D818-6D9D-41F4-BC19-D86B1C7E9357}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/LR_LeaveSetup/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=50">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="Modified" Ascending="FALSE" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Modified" />
+                <FieldRef Name="ID" />
+                <FieldRef Name="EmployeeCode" />
+                <FieldRef Name="Year" />
+                <FieldRef Name="MaxPaidDays" />
+                <FieldRef Name="MaxSickDays" />
+                <FieldRef Name="MaxUnpaidDays" />
+                <FieldRef Name="BonusDays" />
+                <FieldRef Name="EmployeeStartLeave" />
+                <FieldRef Name="EmployeeFullName" />
+                <FieldRef Name="Created" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <CustomFormatter />
+              <ColumnWidth>
+                <FieldRef Name="EmployeeCode" width="254.33331298828125" />
+              </ColumnWidth>
+              <ViewData />
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field DisplayName="EmployeeCode" Format="Dropdown" MaxLength="255" Name="EmployeeCode" Title="EmployeeCode" Type="Text" ID="{21304501-375c-43d0-ba51-d85b4ddcbef4}" SourceID="{{listid:LR_LeaveSetup}}" StaticName="EmployeeCode" ColName="nvarchar4" RowOrdinal="0" />
+            <Field Decimals="0" DisplayName="Year" Format="Dropdown" Name="Year" Percentage="FALSE" Title="Year" Type="Number" ID="{de775678-523f-4699-96b9-baeaf2118724}" SourceID="{{listid:LR_LeaveSetup}}" StaticName="Year" ColName="float1" RowOrdinal="0" />
+            <Field ClientSideComponentId="00000000-0000-0000-0000-000000000000" Decimals="0" DisplayName="MaxPaidDays" Format="Dropdown" Name="MaxPaidDays" Percentage="FALSE" Title="MaxPaidDays" Type="Number" ID="{235e0cb7-c69f-4abc-b7d7-812699495c74}" Version="2" StaticName="MaxPaidDays" SourceID="{{listid:LR_LeaveSetup}}" ColName="float2" RowOrdinal="0" />
+            <Field Decimals="0" DisplayName="MaxSickDays" Format="Dropdown" Name="MaxSickDays" Percentage="FALSE" Title="MaxSickDays" Type="Number" ID="{6b5b9c04-77f7-447d-b680-0336cca52d58}" SourceID="{{listid:LR_LeaveSetup}}" StaticName="MaxSickDays" ColName="float3" RowOrdinal="0" />
+            <Field Decimals="0" DisplayName="MaxUnpaidDays" Format="Dropdown" Name="MaxUnpaidDays" Percentage="FALSE" Title="MaxUnpaidDays" Type="Number" ID="{3d8d68d2-da3b-4a6d-a85a-9a7318c104d6}" SourceID="{{listid:LR_LeaveSetup}}" StaticName="MaxUnpaidDays" ColName="float4" RowOrdinal="0" />
+            <Field Decimals="0" DisplayName="BonusDays" Format="Dropdown" Name="BonusDays" Percentage="FALSE" Title="BonusDays" Type="Number" ID="{33fbb4d2-7b2f-470a-8d7b-e0bcb395179d}" SourceID="{{listid:LR_LeaveSetup}}" StaticName="BonusDays" ColName="float5" RowOrdinal="0" />
+            <Field DisplayName="EmployeeStartLeave" FriendlyDisplayFormat="Disabled" Format="DateOnly" Name="EmployeeStartLeave" Title="EmployeeStartLeave" Type="DateTime" ID="{357a4a14-026a-4c72-9bc6-b5603bfa1e83}" SourceID="{{listid:LR_LeaveSetup}}" StaticName="EmployeeStartLeave" ColName="datetime1" RowOrdinal="0" />
+            <Field DisplayName="EmployeeFullName" Format="Dropdown" MaxLength="255" Name="EmployeeFullName" Title="EmployeeFullName" Type="Text" ID="{cd9e578a-f98e-433f-912d-e48838469fd5}" SourceID="{{listid:LR_LeaveSetup}}" StaticName="EmployeeFullName" ColName="nvarchar5" RowOrdinal="0" />
+            <Field ID="{76d13cd2-1bae-45a5-8b74-545b87b65037}" Name="_ColorTag" DisplaceOnUpgrade="TRUE" ShowInFileDlg="FALSE" ReadOnly="TRUE" Type="Text" DisplayName="Color Tag" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="_ColorTag" FromBaseType="TRUE" ColName="nvarchar7" />
+          </pnp:Fields>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="fa564e0f-0c70-4ab9-b863-0177e6ddd247" Name="Title" DisplayName="Title" />
+          </pnp:FieldRefs>
+          <pnp:Security>
+            <pnp:BreakRoleInheritance CopyRoleAssignments="false" ClearSubscopes="false">
+              <pnp:RoleAssignment Principal="i:0#.f|membership|gabi.balaban@itassist.eu" RoleDefinition="Full Control" />
+              <pnp:RoleAssignment Principal="i:0#.f|membership|ita_biz@itassist.eu" RoleDefinition="Full Control" />
+              <pnp:RoleAssignment Principal="c:0t.c|tenant|831f90d1-c41f-4bd0-9800-88d811c28394" RoleDefinition="Read" />
+            </pnp:BreakRoleInheritance>
+          </pnp:Security>
+        </pnp:ListInstance>
+      </pnp:Lists>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>

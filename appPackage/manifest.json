@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.19/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.19",
+  "version": "1.1.0",
+  "id": "661a64f0-7ed1-413c-a709-4ea98ef49fd7",
+  "developer": {
+    "name": "IT ASSIST SERVICES SRL",
+    "websiteUrl": "https://itassist.eu",
+    "privacyUrl": "https://itassist.eu/privacy",
+    "termsOfUseUrl": "https://itassist.eu/terms"
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "name": {
+    "short": "Internal Processes",
+    "full": "Internal Processes — Leave Requests & Expense Reports"
+  },
+  "description": {
+    "short": "Leave requests and expense reports, right in Teams",
+    "full": "A native Teams app for submitting, approving and tracking leave requests and expense reports, with one combined approvals inbox. Data is kept in your own organization's SharePoint."
+  },
+  "accentColor": "#464775",
+  "staticTabs": [
+    {
+      "entityId": "home",
+      "name": "Requests",
+      "contentUrl": "https://ca-internal-processes.politesky-08438219.westeurope.azurecontainerapps.io/",
+      "websiteUrl": "https://ca-internal-processes.politesky-08438219.westeurope.azurecontainerapps.io/",
+      "scopes": [
+        "personal"
+      ]
+    }
+  ],
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ],
+  "validDomains": [
+    "ca-internal-processes.politesky-08438219.westeurope.azurecontainerapps.io"
+  ],
+  "activities": {
+    "activityTypes": [
+      {
+        "type": "leaveRequestUpdate",
+        "description": "A leave request needs your attention",
+        "templateText": "{message}"
+      }
+    ]
+  },
+  "webApplicationInfo": {
+    "id": "359906f4-0bbf-4810-97f4-0d1b28aa5f1a",
+    "resource": "api://ca-internal-processes.politesky-08438219.westeurope.azurecontainerapps.io/359906f4-0bbf-4810-97f4-0d1b28aa5f1a"
+  }
+}

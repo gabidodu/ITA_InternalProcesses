@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2022/09/ProvisioningSchema">
+  <pnp:Preferences Generator="PnP.Framework, Version=1.18.0.0, Culture=neutral, PublicKeyToken=0d501f89f11b748c" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-CE163CCE135D4DC19BFAF3B2AFDA0112">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-CE163CCE135D4DC19BFAF3B2AFDA0112" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
+      <pnp:Lists>
+        <pnp:ListInstance Title="LR_HolidaySetup" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/LR_HolidaySetup" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/LR_HolidaySetup/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/LR_HolidaySetup/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/LR_HolidaySetup/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{6B9652C7-4109-4D0E-A777-44A93B38B586}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/LR_HolidaySetup/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=50">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="ID" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="HolidayName" />
+                <FieldRef Name="HolidayDate" />
+                <FieldRef Name="HolidayYear" />
+                <FieldRef Name="HolidayType" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <CustomFormatter />
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field DisplayName="HolidayName" Format="Dropdown" MaxLength="255" Name="HolidayName" Title="HolidayName" Type="Text" ID="{03939956-5658-4a7c-8c0e-fa59549e4ae2}" SourceID="{{listid:LR_HolidaySetup}}" StaticName="HolidayName" ColName="nvarchar4" RowOrdinal="0" CustomFormatter="" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" Version="1" />
+            <Field ClientSideComponentId="00000000-0000-0000-0000-000000000000" DisplayName="HolidayDate" FriendlyDisplayFormat="Disabled" Format="DateOnly" Name="HolidayDate" Title="HolidayDate" Type="DateTime" ID="{df78fada-c11c-4c80-ba2d-3302821e67e0}" Version="3" StaticName="HolidayDate" SourceID="{{listid:LR_HolidaySetup}}" ColName="datetime1" RowOrdinal="0" />
+            <Field DisplayName="HolidayType" Format="Dropdown" MaxLength="255" Name="HolidayType" Title="HolidayType" Type="Text" ID="{f709825f-7483-486d-8eb0-377a0a1d710f}" SourceID="{{listid:LR_HolidaySetup}}" StaticName="HolidayType" ColName="nvarchar5" RowOrdinal="0" Indexed="TRUE" Version="1">
+              <Default>Legal</Default>
+            </Field>
+            <Field Type="Number" DisplayName="HolidayYear" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{50ca3b68-3407-470a-af34-0ca83280a49a}" SourceID="{{listid:LR_HolidaySetup}}" StaticName="HolidayYear" Name="HolidayYear" ColName="float1" RowOrdinal="0" />
+            <Field ID="{76d13cd2-1bae-45a5-8b74-545b87b65037}" Name="_ColorTag" DisplaceOnUpgrade="TRUE" ShowInFileDlg="FALSE" ReadOnly="TRUE" Type="Text" DisplayName="Color Tag" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="_ColorTag" FromBaseType="TRUE" ColName="nvarchar7" />
+          </pnp:Fields>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="fa564e0f-0c70-4ab9-b863-0177e6ddd247" Name="Title" DisplayName="IDHolidaySetup" />
+          </pnp:FieldRefs>
+          <pnp:Security>
+            <pnp:BreakRoleInheritance CopyRoleAssignments="false" ClearSubscopes="false">
+              <pnp:RoleAssignment Principal="i:0#.f|membership|gabi.balaban@itassist.eu" RoleDefinition="Full Control" />
+              <pnp:RoleAssignment Principal="i:0#.f|membership|ita_biz@itassist.eu" RoleDefinition="Full Control" />
+              <pnp:RoleAssignment Principal="c:0t.c|tenant|831f90d1-c41f-4bd0-9800-88d811c28394" RoleDefinition="Read" />
+            </pnp:BreakRoleInheritance>
+          </pnp:Security>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="LR_LeaveRequests" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/LR_LeaveRequests" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="10" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" NoCrawl="true" DefaultDisplayFormUrl="{site}/Lists/LR_LeaveRequests/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/LR_LeaveRequests/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/LR_LeaveRequests/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{D5FA4F7D-356E-4723-AEB9-29F573EEB457}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/LR_LeaveRequests/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=50">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="RequestDate" Ascending="FALSE" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Created" />
+                <FieldRef Name="StartDate" />
+                <FieldRef Name="EndDate" />
+                <FieldRef Name="EmployeeCode" />
+                <FieldRef Name="TakenDays" />
+                <FieldRef Name="RequestType" />
+                <FieldRef Name="RequestSubject" />
+                <FieldRef Name="Status" />
+                <FieldRef Name="Year" />
+                <FieldRef Name="Comments" />
+                <FieldRef Name="StandInEmployee" />
+                <FieldRef Name="CurrentUser" />
+                <FieldRef Name="ApprovalFLow" />
+                <FieldRef Name="ID" />
+                <FieldRef Name="Author" />
+                <FieldRef Name="Modified" />
+                <FieldRef Name="Editor" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="On">
+                <FieldRef Name="TakenDays" Type="SUM" />
+              </Aggregations>
+              <JSLink>clienttemplates.js</JSLink>
+              <CustomFormatter />
+              <ColumnWidth>
+                <FieldRef Name="CurrentUser" width="241" />
+                <FieldRef Name="Editor" width="196" />
+                <FieldRef Name="Comments" width="163" />
+                <FieldRef Name="Created" width="266" />
+              </ColumnWidth>
+              <ViewData />
+            </View>
+            <View Name="{232EA129-8376-412E-B6C8-2E01B8D5A69D}" MobileView="TRUE" Type="HTML" DisplayName="listen_by_PowerAutomate" Url="{site}/Lists/LR_LeaveRequests/listen_by_PowerAutomate.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=50">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="Created" Ascending="FALSE" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="ID" />
+                <FieldRef Name="Status" />
+                <FieldRef Name="CurrentUser" />
+                <FieldRef Name="Modified" />
+                <FieldRef Name="Editor" />
+                <FieldRef Name="ApprovalFLow" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field ClientSideComponentId="00000000-0000-0000-0000-000000000000" CustomFormatter="dd.mm.yyyy" DisplayName="RequestDate" FriendlyDisplayFormat="Relative" Format="DateTime" Name="RequestDate" Title="RequestDate" Type="DateTime" ID="{b36ace92-12aa-4855-aab7-5ce8c8b17da6}" Version="8" StaticName="RequestDate" SourceID="{{listid:LR_LeaveRequests}}" ColName="datetime1" RowOrdinal="0" />
+            <Field Decimals="0" DisplayName="RequestType" Format="Dropdown" Name="RequestType" Percentage="FALSE" Title="RequestType" Type="Number" ID="{15e13a6d-aca5-4ea0-a056-c2e37efb9219}" SourceID="{{listid:LR_LeaveRequests}}" StaticName="RequestType" ColName="float2" RowOrdinal="0" />
+            <Field DisplayName="RequestSubject" Format="Dropdown" MaxLength="255" Name="RequestSubject" Title="RequestSubject" Type="Text" ID="{24d7829b-ffc2-4cd2-b7b3-dea5bafb7d9f}" SourceID="{{listid:LR_LeaveRequests}}" StaticName="RequestSubject" ColName="nvarchar4" RowOrdinal="0" />
+            <Field ClientSideComponentId="00000000-0000-0000-0000-000000000000" DisplayName="StartDate" FriendlyDisplayFormat="Disabled" Format="DateOnly" Name="StartDate" Title="StartDate" Type="DateTime" ID="{3eaa2d2d-f4c1-47be-a557-2070e17028aa}" Version="3" StaticName="StartDate" SourceID="{{listid:LR_LeaveRequests}}" ColName="datetime2" RowOrdinal="0" />
+            <Field ClientSideComponentId="00000000-0000-0000-0000-000000000000" DisplayName="EndDate" FriendlyDisplayFormat="Disabled" Format="DateOnly" Name="EndDate" Title="EndDate" Type="DateTime" ID="{67ba9e22-47dc-4740-b75b-4c65848e5a80}" Version="3" StaticName="EndDate" SourceID="{{listid:LR_LeaveRequests}}" ColName="datetime3" RowOrdinal="0" />
+            <Field DisplayName="TakenDays" Format="Dropdown" Name="TakenDays" Percentage="FALSE" Title="TakenDays" Type="Number" ID="{40f785f6-fae2-4ebd-b9e9-eb1626981098}" SourceID="{{listid:LR_LeaveRequests}}" StaticName="TakenDays" ColName="float3" RowOrdinal="0" />
+            <Field DisplayName="Status" Format="Dropdown" MaxLength="255" Name="Status" Title="Status" Type="Text" ID="{50389ba0-665f-40b9-b111-3a0f5beb2d7b}" SourceID="{{listid:LR_LeaveRequests}}" StaticName="Status" ColName="nvarchar5" RowOrdinal="0" />
+            <Field DisplayName="Comments" Format="Dropdown" MaxLength="255" Name="Comments" Title="Comments" Type="Text" ID="{812f5ec9-a131-41b7-841d-395092aa8220}" SourceID="{{listid:LR_LeaveRequests}}" StaticName="Comments" ColName="nvarchar6" RowOrdinal="0" />
+            <Field DisplayName="EmployeeCode" Format="Dropdown" MaxLength="255" Name="EmployeeCode" Title="EmployeeCode" Type="Text" ID="{8ba86c5c-6422-4f45-8c6e-cce2b264afdf}" SourceID="{{listid:LR_LeaveRequests}}" StaticName="EmployeeCode" ColName="nvarchar7" RowOrdinal="0" />
+            <Field DisplayName="StandInEmployee" Format="Dropdown" MaxLength="255" Name="StandInEmployee" Title="StandInEmployee" Type="Text" ID="{cd325a52-a4b5-44ba-9f38-dfb64e3f6cb8}" SourceID="{{listid:LR_LeaveRequests}}" StaticName="StandInEmployee" ColName="nvarchar8" RowOrdinal="0" />
+            <Field DisplayName="CurrentUser" Format="Dropdown" MaxLength="255" Name="CurrentUser" Title="CurrentUser" Type="Text" ID="{26d6ac65-84b0-4781-bb96-dac623adbfa6}" SourceID="{{listid:LR_LeaveRequests}}" StaticName="CurrentUser" ColName="nvarchar9" RowOrdinal="0" />
+            <Field Type="Number" DisplayName="Year" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Decimals="0" ID="{45466f39-b750-4cd4-9001-b6fe51157b45}" SourceID="{{listid:LR_LeaveRequests}}" StaticName="Year" Name="Year" ColName="float4" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="ApprovalFlow" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{88d2b883-1708-4fab-b34e-0321e607dd75}" SourceID="{{listid:LR_LeaveRequests}}" StaticName="ApprovalFLow" Name="ApprovalFLow" ColName="nvarchar11" RowOrdinal="0" CustomFormatter="" Version="1" />
+            <Field Type="Text" DisplayName="ID_LeaveRequest" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{873d3cb5-e21f-49bf-9ebf-0af77a06ef50}" SourceID="{{listid:LR_LeaveRequests}}" StaticName="ID_LeaveRequest" Name="ID_LeaveRequest" ColName="nvarchar10" RowOrdinal="0" />
+            <Field ID="{76d13cd2-1bae-45a5-8b74-545b87b65037}" Name="_ColorTag" DisplaceOnUpgrade="TRUE" ShowInFileDlg="FALSE" ReadOnly="TRUE" Type="Text" DisplayName="Color Tag" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="_ColorTag" FromBaseType="TRUE" ColName="nvarchar13" />
+            <Field Type="Text" DisplayName="runAutomation" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{9edc7e88-9196-4302-a6aa-c2674527bb12}" SourceID="{{listid:LR_LeaveRequests}}" StaticName="runAutomation" Name="runAutomation" ColName="nvarchar15" RowOrdinal="0" />
+          </pnp:Fields>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="fa564e0f-0c70-4ab9-b863-0177e6ddd247" Name="Title" DisplayName="Title" />
+          </pnp:FieldRefs>
+          <pnp:Security>
+            <pnp:BreakRoleInheritance CopyRoleAssignments="false" ClearSubscopes="false">
+              <pnp:RoleAssignment Principal="i:0#.f|membership|ita_biz@itassist.eu" RoleDefinition="Full Control" />
+              <pnp:RoleAssignment Principal="c:0t.c|tenant|831f90d1-c41f-4bd0-9800-88d811c28394" RoleDefinition="Edit" />
+            </pnp:BreakRoleInheritance>
+          </pnp:Security>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="LR_LeaveSetup" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/LR_LeaveSetup" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="50" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/LR_LeaveSetup/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/LR_LeaveSetup/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/LR_LeaveSetup/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{52B5D818-6D9D-41F4-BC19-D86B1C7E9357}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/LR_LeaveSetup/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=50">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="Modified" Ascending="FALSE" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Modified" />
+                <FieldRef Name="ID" />
+                <FieldRef Name="EmployeeCode" />
+                <FieldRef Name="Year" />
+                <FieldRef Name="MaxPaidDays" />
+                <FieldRef Name="MaxSickDays" />
+                <FieldRef Name="MaxUnpaidDays" />
+                <FieldRef Name="BonusDays" />
+                <FieldRef Name="EmployeeStartLeave" />
+                <FieldRef Name="EmployeeFullName" />
+                <FieldRef Name="Created" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <CustomFormatter />
+              <ColumnWidth>
+                <FieldRef Name="EmployeeCode" width="254.33331298828125" />
+              </ColumnWidth>
+              <ViewData />
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field DisplayName="EmployeeCode" Format="Dropdown" MaxLength="255" Name="EmployeeCode" Title="EmployeeCode" Type="Text" ID="{21304501-375c-43d0-ba51-d85b4ddcbef4}" SourceID="{{listid:LR_LeaveSetup}}" StaticName="EmployeeCode" ColName="nvarchar4" RowOrdinal="0" />
+            <Field Decimals="0" DisplayName="Year" Format="Dropdown" Name="Year" Percentage="FALSE" Title="Year" Type="Number" ID="{de775678-523f-4699-96b9-baeaf2118724}" SourceID="{{listid:LR_LeaveSetup}}" StaticName="Year" ColName="float1" RowOrdinal="0" />
+            <Field ClientSideComponentId="00000000-0000-0000-0000-000000000000" Decimals="0" DisplayName="MaxPaidDays" Format="Dropdown" Name="MaxPaidDays" Percentage="FALSE" Title="MaxPaidDays" Type="Number" ID="{235e0cb7-c69f-4abc-b7d7-812699495c74}" Version="2" StaticName="MaxPaidDays" SourceID="{{listid:LR_LeaveSetup}}" ColName="float2" RowOrdinal="0" />
+            <Field Decimals="0" DisplayName="MaxSickDays" Format="Dropdown" Name="MaxSickDays" Percentage="FALSE" Title="MaxSickDays" Type="Number" ID="{6b5b9c04-77f7-447d-b680-0336cca52d58}" SourceID="{{listid:LR_LeaveSetup}}" StaticName="MaxSickDays" ColName="float3" RowOrdinal="0" />
+            <Field Decimals="0" DisplayName="MaxUnpaidDays" Format="Dropdown" Name="MaxUnpaidDays" Percentage="FALSE" Title="MaxUnpaidDays" Type="Number" ID="{3d8d68d2-da3b-4a6d-a85a-9a7318c104d6}" SourceID="{{listid:LR_LeaveSetup}}" StaticName="MaxUnpaidDays" ColName="float4" RowOrdinal="0" />
+            <Field Decimals="0" DisplayName="BonusDays" Format="Dropdown" Name="BonusDays" Percentage="FALSE" Title="BonusDays" Type="Number" ID="{33fbb4d2-7b2f-470a-8d7b-e0bcb395179d}" SourceID="{{listid:LR_LeaveSetup}}" StaticName="BonusDays" ColName="float5" RowOrdinal="0" />
+            <Field DisplayName="EmployeeStartLeave" FriendlyDisplayFormat="Disabled" Format="DateOnly" Name="EmployeeStartLeave" Title="EmployeeStartLeave" Type="DateTime" ID="{357a4a14-026a-4c72-9bc6-b5603bfa1e83}" SourceID="{{listid:LR_LeaveSetup}}" StaticName="EmployeeStartLeave" ColName="datetime1" RowOrdinal="0" />
+            <Field DisplayName="EmployeeFullName" Format="Dropdown" MaxLength="255" Name="EmployeeFullName" Title="EmployeeFullName" Type="Text" ID="{cd9e578a-f98e-433f-912d-e48838469fd5}" SourceID="{{listid:LR_LeaveSetup}}" StaticName="EmployeeFullName" ColName="nvarchar5" RowOrdinal="0" />
+            <Field ID="{76d13cd2-1bae-45a5-8b74-545b87b65037}" Name="_ColorTag" DisplaceOnUpgrade="TRUE" ShowInFileDlg="FALSE" ReadOnly="TRUE" Type="Text" DisplayName="Color Tag" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="_ColorTag" FromBaseType="TRUE" ColName="nvarchar7" />
+          </pnp:Fields>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="fa564e0f-0c70-4ab9-b863-0177e6ddd247" Name="Title" DisplayName="Title" />
+          </pnp:FieldRefs>
+          <pnp:Security>
+            <pnp:BreakRoleInheritance CopyRoleAssignments="false" ClearSubscopes="false">
+              <pnp:RoleAssignment Principal="i:0#.f|membership|gabi.balaban@itassist.eu" RoleDefinition="Full Control" />
+              <pnp:RoleAssignment Principal="i:0#.f|membership|ita_biz@itassist.eu" RoleDefinition="Full Control" />
+              <pnp:RoleAssignment Principal="c:0t.c|tenant|831f90d1-c41f-4bd0-9800-88d811c28394" RoleDefinition="Read" />
+            </pnp:BreakRoleInheritance>
+          </pnp:Security>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="LR_LeaveStatus" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/LR_LeaveSetup_Extended" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="20" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/LR_LeaveSetup_Extended/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/LR_LeaveSetup_Extended/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/LR_LeaveSetup_Extended/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{FC83C6C0-F5C4-4C77-B9DC-0F92D967203A}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/LR_LeaveSetup_Extended/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=50">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="ID" Ascending="FALSE" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="ID" />
+                <FieldRef Name="EmployeeCode" />
+                <FieldRef Name="RequestType" />
+                <FieldRef Name="ActionTypeName" />
+                <FieldRef Name="AllocDays" />
+                <FieldRef Name="TakenDays" />
+                <FieldRef Name="ApprovalFlow" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <CustomFormatter />
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field Type="Text" DisplayName="EmployeeCode" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{142784fe-1490-41d5-ab14-9985b7136920}" SourceID="{{listid:LR_LeaveStatus}}" StaticName="EmployeeCode" Name="EmployeeCode" ColName="nvarchar4" RowOrdinal="0" CustomFormatter="" Version="1" />
+            <Field Type="Number" DisplayName="RequestType" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{42f0521a-648c-417b-a994-946c1f8d8e83}" SourceID="{{listid:LR_LeaveStatus}}" StaticName="RequestType" Name="RequestType" ColName="float2" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="ActionTypeName" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{20b6e305-d9d3-49af-bebc-b16ba92176a9}" SourceID="{{listid:LR_LeaveStatus}}" StaticName="ActionTypeName" Name="ActionTypeName" ColName="nvarchar5" RowOrdinal="0" />
+            <Field Type="Number" DisplayName="AllocDays" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{e09cc5ca-231b-4328-bd5e-a0b61a72c8ec}" SourceID="{{listid:LR_LeaveStatus}}" StaticName="AllocDays" Name="AllocDays" ColName="float3" RowOrdinal="0" CustomFormatter="" Percentage="FALSE" Version="1" />
+            <Field Type="Number" DisplayName="TakenDays" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{0411cd42-1969-4e7a-9756-7f3b7e108d4d}" SourceID="{{listid:LR_LeaveStatus}}" StaticName="TakenDays" Name="TakenDays" ColName="float1" RowOrdinal="0" />
+            <Field DisplayName="ApprovalFlow" Format="Dropdown" MaxLength="255" Name="ApprovalFlow" Title="ApprovalFlow" Type="Text" ID="{246edb50-a9f1-4bde-a99c-7456bf84ace1}" SourceID="{{listid:LR_LeaveStatus}}" StaticName="ApprovalFlow" ColName="nvarchar6" RowOrdinal="0">
+              <Default>manager;GM</Default>
+            </Field>
+            <Field ID="{76d13cd2-1bae-45a5-8b74-545b87b65037}" Name="_ColorTag" DisplaceOnUpgrade="TRUE" ShowInFileDlg="FALSE" ReadOnly="TRUE" Type="Text" DisplayName="Color Tag" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="_ColorTag" FromBaseType="TRUE" ColName="nvarchar8" />
+          </pnp:Fields>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="fa564e0f-0c70-4ab9-b863-0177e6ddd247" Name="Title" DisplayName="Title" />
+          </pnp:FieldRefs>
+          <pnp:Security>
+            <pnp:BreakRoleInheritance CopyRoleAssignments="false" ClearSubscopes="false">
+              <pnp:RoleAssignment Principal="i:0#.f|membership|gabi.balaban@itassist.eu" RoleDefinition="Full Control" />
+              <pnp:RoleAssignment Principal="i:0#.f|membership|ita_biz@itassist.eu" RoleDefinition="Full Control" />
+              <pnp:RoleAssignment Principal="c:0t.c|tenant|831f90d1-c41f-4bd0-9800-88d811c28394" RoleDefinition="Read" />
+            </pnp:BreakRoleInheritance>
+          </pnp:Security>
+        </pnp:ListInstance>
+      </pnp:Lists>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>

@@ -1,0 +1,27 @@
+# Local-only: runs the same single-container image as production (nginx on
+# 8080 serving the static export + the Functions host behind /api) against
+# the REAL SharePoint lists and TenantConfigs table — only useful together
+# with a Teams sideload pointing at a tunnel, since every API call needs a
+# genuine Teams SSO token. For just looking at the UI, use `npm run preview`
+# in web/ instead (no backend at all).
+services:
+  azurite:
+    image: mcr.microsoft.com/azure-storage/azurite
+    command: "azurite --blobHost 0.0.0.0 --queueHost 0.0.0.0 --tableHost 0.0.0.0"
+
+  app:
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    environment:
+      AzureWebJobsStorage: "DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://azurite:10000/devstoreaccount1;QueueEndpoint=http://azurite:10001/devstoreaccount1;TableEndpoint=http://azurite:10002/devstoreaccount1;"
+      TENANT_CONFIG_STORAGE_CONNECTION_STRING: "${TENANT_CONFIG_STORAGE_CONNECTION_STRING:?set this in a local .env file, not committed}"
+      TAB_BASE_URL: "http://localhost:8080"
+      TEAMS_APP_ID: "661a64f0-7ed1-413c-a709-4ea98ef49fd7"
+      AAD_APP_CLIENT_ID: "359906f4-0bbf-4810-97f4-0d1b28aa5f1a"
+      AAD_APP_CLIENT_SECRET: "${AAD_APP_CLIENT_SECRET:?set this in a local .env file, not committed}"
+      ACTIONABLE_MESSAGE_ORIGINATOR_ID: "${ACTIONABLE_MESSAGE_ORIGINATOR_ID:-}"
+      ACTIONABLE_MESSAGE_AUDIENCE: "${ACTIONABLE_MESSAGE_AUDIENCE:-}"
+    depends_on:
+      - azurite

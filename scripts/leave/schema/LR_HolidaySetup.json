@@ -1,0 +1,415 @@
+[
+  {
+    "Title": "HolidayName",
+    "InternalName": "HolidayName",
+    "Type": "Text",
+    "Required": true,
+    "DefaultValue": null
+  },
+  {
+    "Title": "HolidayDate",
+    "InternalName": "HolidayDate",
+    "Type": "DateTime",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "HolidayType",
+    "InternalName": "HolidayType",
+    "Type": "Text",
+    "Required": false,
+    "DefaultValue": "Legal"
+  },
+  {
+    "Title": "HolidayYear",
+    "InternalName": "HolidayYear",
+    "Type": "Number",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Content Type ID",
+    "InternalName": "ContentTypeId",
+    "Type": "ContentTypeId",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Approver Comments",
+    "InternalName": "_ModerationComments",
+    "Type": "Note",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "File Type",
+    "InternalName": "File_x0020_Type",
+    "Type": "Text",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "IDHolidaySetup",
+    "InternalName": "LinkTitle2",
+    "Type": "Computed",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Color",
+    "InternalName": "_ColorHex",
+    "Type": "Text",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Emoji",
+    "InternalName": "_Emoji",
+    "Type": "Text",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Has Copy Destinations",
+    "InternalName": "_HasCopyDestinations",
+    "Type": "Boolean",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Copy Source",
+    "InternalName": "_CopySource",
+    "Type": "Text",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "UI Version",
+    "InternalName": "_UIVersion",
+    "Type": "Integer",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Approval Status",
+    "InternalName": "_ModerationStatus",
+    "Type": "ModStat",
+    "Required": false,
+    "DefaultValue": "0"
+  },
+  {
+    "Title": "Select",
+    "InternalName": "SelectTitle",
+    "Type": "Computed",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Instance ID",
+    "InternalName": "InstanceID",
+    "Type": "Integer",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Order",
+    "InternalName": "Order",
+    "Type": "Number",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Workflow Instance ID",
+    "InternalName": "WorkflowInstanceID",
+    "Type": "Guid",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Path",
+    "InternalName": "FileDirRef",
+    "Type": "Lookup",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Modified",
+    "InternalName": "Last_x0020_Modified",
+    "Type": "Lookup",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Created",
+    "InternalName": "Created_x0020_Date",
+    "Type": "Lookup",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Sort Type",
+    "InternalName": "SortBehavior",
+    "Type": "Lookup",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Effective Permissions Mask",
+    "InternalName": "PermMask",
+    "Type": "Computed",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Principal Count",
+    "InternalName": "PrincipalCount",
+    "Type": "Computed",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Unique Id",
+    "InternalName": "UniqueId",
+    "Type": "Lookup",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Document Parent Identifier",
+    "InternalName": "ParentUniqueId",
+    "Type": "Lookup",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Client Id",
+    "InternalName": "SyncClientId",
+    "Type": "Lookup",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "ProgId",
+    "InternalName": "ProgId",
+    "Type": "Lookup",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "ScopeId",
+    "InternalName": "ScopeId",
+    "Type": "Lookup",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "HTML File Type",
+    "InternalName": "HTML_x0020_File_x0020_Type",
+    "Type": "Computed",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Edit Menu Table Start",
+    "InternalName": "_EditMenuTableStart",
+    "Type": "Computed",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Edit Menu Table Start",
+    "InternalName": "_EditMenuTableStart2",
+    "Type": "Computed",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Edit Menu Table End",
+    "InternalName": "_EditMenuTableEnd",
+    "Type": "Computed",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Name",
+    "InternalName": "LinkFilenameNoMenu",
+    "Type": "Computed",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Name",
+    "InternalName": "LinkFilename",
+    "Type": "Computed",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Name",
+    "InternalName": "LinkFilename2",
+    "Type": "Computed",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Server Relative URL",
+    "InternalName": "ServerUrl",
+    "Type": "Computed",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Encoded Absolute URL",
+    "InternalName": "EncodedAbsUrl",
+    "Type": "Computed",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "File Name",
+    "InternalName": "BaseName",
+    "Type": "Computed",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Property Bag",
+    "InternalName": "MetaInfo",
+    "Type": "Lookup",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Level",
+    "InternalName": "_Level",
+    "Type": "Integer",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Is Current Version",
+    "InternalName": "_IsCurrentVersion",
+    "Type": "Boolean",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Restricted",
+    "InternalName": "Restricted",
+    "Type": "Lookup",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Originator Id",
+    "InternalName": "OriginatorId",
+    "Type": "Lookup",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "NoExecute",
+    "InternalName": "NoExecute",
+    "Type": "Lookup",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Content Version",
+    "InternalName": "ContentVersion",
+    "Type": "Lookup",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Access Policy",
+    "InternalName": "AccessPolicy",
+    "Type": "Lookup",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "VirusStatus",
+    "InternalName": "_VirusStatus",
+    "Type": "Lookup",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "VirusVendorID",
+    "InternalName": "_VirusVendorID",
+    "Type": "Lookup",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "VirusInfo",
+    "InternalName": "_VirusInfo",
+    "Type": "Lookup",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "RansomwareAnomalyMetaInfo",
+    "InternalName": "_RansomwareAnomalyMetaInfo",
+    "Type": "Lookup",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Draft Owner Id",
+    "InternalName": "_DraftOwnerId",
+    "Type": "Lookup",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Main Link settings",
+    "InternalName": "MainLinkSettings",
+    "Type": "Computed",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Total Size",
+    "InternalName": "SMTotalSize",
+    "Type": "Lookup",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Last Modified Date",
+    "InternalName": "SMLastModifiedDate",
+    "Type": "Lookup",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Total File Stream Size",
+    "InternalName": "SMTotalFileStreamSize",
+    "Type": "Lookup",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Total File Count",
+    "InternalName": "SMTotalFileCount",
+    "Type": "Lookup",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Comment settings",
+    "InternalName": "_CommentFlags",
+    "Type": "Lookup",
+    "Required": false,
+    "DefaultValue": null
+  },
+  {
+    "Title": "Comment count",
+    "InternalName": "_CommentCount",
+    "Type": "Lookup",
+    "Required": false,
+    "DefaultValue": null
+  }
+]

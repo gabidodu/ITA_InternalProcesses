@@ -1,0 +1,15 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "TENANT_CONFIG_STORAGE_CONNECTION_STRING": "<stleaverequestforteams connection string>",
+    "AAD_APP_CLIENT_ID": "359906f4-0bbf-4810-97f4-0d1b28aa5f1a",
+    "AAD_APP_CLIENT_SECRET": "<secret>",
+    "TAB_BASE_URL": "https://ca-internal-processes.politesky-08438219.westeurope.azurecontainerapps.io",
+    "TEAMS_APP_ID": "661a64f0-7ed1-413c-a709-4ea98ef49fd7",
+    "ACTIONABLE_MESSAGE_ORIGINATOR_ID": "e1414a49-1a3e-4bba-94b4-e27134577476",
+    "ACTIONABLE_MESSAGE_AUDIENCE": "api://auth-am-e1414a49-1a3e-4bba-94b4-e27134577476/359906f4-0bbf-4810-97f4-0d1b28aa5f1a",
+    "CALENDAR_NAME": ""
+  }
+}

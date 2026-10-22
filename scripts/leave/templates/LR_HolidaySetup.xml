@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2022/09/ProvisioningSchema">
+  <pnp:Preferences Generator="PnP.Framework, Version=1.18.0.0, Culture=neutral, PublicKeyToken=0d501f89f11b748c" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-0A850B8BA8674375ACC167AD7CC65EEC">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-0A850B8BA8674375ACC167AD7CC65EEC" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
+      <pnp:Lists>
+        <pnp:ListInstance Title="LR_HolidaySetup" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/LR_HolidaySetup" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/LR_HolidaySetup/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/LR_HolidaySetup/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/LR_HolidaySetup/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{6B9652C7-4109-4D0E-A777-44A93B38B586}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/LR_HolidaySetup/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=50">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="ID" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="HolidayName" />
+                <FieldRef Name="HolidayDate" />
+                <FieldRef Name="HolidayYear" />
+                <FieldRef Name="HolidayType" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <CustomFormatter />
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field DisplayName="HolidayName" Format="Dropdown" MaxLength="255" Name="HolidayName" Title="HolidayName" Type="Text" ID="{03939956-5658-4a7c-8c0e-fa59549e4ae2}" SourceID="{{listid:LR_HolidaySetup}}" StaticName="HolidayName" ColName="nvarchar4" RowOrdinal="0" CustomFormatter="" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" Version="1" />
+            <Field ClientSideComponentId="00000000-0000-0000-0000-000000000000" DisplayName="HolidayDate" FriendlyDisplayFormat="Disabled" Format="DateOnly" Name="HolidayDate" Title="HolidayDate" Type="DateTime" ID="{df78fada-c11c-4c80-ba2d-3302821e67e0}" Version="3" StaticName="HolidayDate" SourceID="{{listid:LR_HolidaySetup}}" ColName="datetime1" RowOrdinal="0" />
+            <Field DisplayName="HolidayType" Format="Dropdown" MaxLength="255" Name="HolidayType" Title="HolidayType" Type="Text" ID="{f709825f-7483-486d-8eb0-377a0a1d710f}" SourceID="{{listid:LR_HolidaySetup}}" StaticName="HolidayType" ColName="nvarchar5" RowOrdinal="0" Indexed="TRUE" Version="1">
+              <Default>Legal</Default>
+            </Field>
+            <Field Type="Number" DisplayName="HolidayYear" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{50ca3b68-3407-470a-af34-0ca83280a49a}" SourceID="{{listid:LR_HolidaySetup}}" StaticName="HolidayYear" Name="HolidayYear" ColName="float1" RowOrdinal="0" />
+            <Field ID="{76d13cd2-1bae-45a5-8b74-545b87b65037}" Name="_ColorTag" DisplaceOnUpgrade="TRUE" ShowInFileDlg="FALSE" ReadOnly="TRUE" Type="Text" DisplayName="Color Tag" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="_ColorTag" FromBaseType="TRUE" ColName="nvarchar7" />
+          </pnp:Fields>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="fa564e0f-0c70-4ab9-b863-0177e6ddd247" Name="Title" DisplayName="IDHolidaySetup" />
+          </pnp:FieldRefs>
+          <pnp:Security>
+            <pnp:BreakRoleInheritance CopyRoleAssignments="false" ClearSubscopes="false">
+              <pnp:RoleAssignment Principal="i:0#.f|membership|gabi.balaban@itassist.eu" RoleDefinition="Full Control" />
+              <pnp:RoleAssignment Principal="i:0#.f|membership|ita_biz@itassist.eu" RoleDefinition="Full Control" />
+              <pnp:RoleAssignment Principal="c:0t.c|tenant|831f90d1-c41f-4bd0-9800-88d811c28394" RoleDefinition="Read" />
+            </pnp:BreakRoleInheritance>
+          </pnp:Security>
+        </pnp:ListInstance>
+      </pnp:Lists>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>

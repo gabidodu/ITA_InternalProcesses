@@ -1,0 +1,20 @@
+# Secrets — never commit these
+.swa-deploy-token.txt
+certs/*.pfx
+certs/pfx-password.txt
+
+# Dependencies / build output
+node_modules/
+dist/
+out/
+.next/
+
+# Local settings
+local.settings.json
+.env*.local
+
+# Claude Code local session/tool state — not project source
+.claude/
+
+# Throwaway Teams sideload package for testing (Container Apps migration, etc.) — never the real installed app
+appPackage-test/

@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* Ledger design tokens — light */
+  --page: #f5f6f7;
+  --surface: #ffffff;
+  --surface-2: #fafbfc;
+  --line: #e3e6ea;
+  --ink: #12161c;
+  --ink-2: #5b6472;
+  --ink-3: #8890a0;
+  --accent: #2b3a67;
+  --accent-ink: #ffffff;
+  --accent-soft: #eaecf3;
+  --good: #0ca30c;
+  --good-soft: #e4f6e1;
+  --warning: #b8790f;
+  --warning-soft: #fdf1da;
+  --critical: #d03b3b;
+  --critical-soft: #fbe7e6;
+  --neutral: #6b7280;
+  --neutral-soft: #eeeff1;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
+  --color-good: var(--good);
+  --color-good-soft: var(--good-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-critical: var(--critical);
+  --color-critical-soft: var(--critical-soft);
+  --color-neutral: var(--neutral);
+  --color-neutral-soft: var(--neutral-soft);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+
+    /* Ledger design tokens — dark */
+    --page: #0f1216;
+    --surface: #171b22;
+    --surface-2: #1c212a;
+    --line: #262b34;
+    --ink: #edeff2;
+    --ink-2: #9aa3b2;
+    --ink-3: #6b7382;
+    --accent: #8b9dd9;
+    --accent-ink: #12161c;
+    --accent-soft: #232a42;
+    --good: #3fc23f;
+    --good-soft: #16281a;
+    --warning: #fab219;
+    --warning-soft: #2c2410;
+    --critical: #e66767;
+    --critical-soft: #2c1717;
+    --neutral: #9aa3b2;
+    --neutral-soft: #20242c;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}

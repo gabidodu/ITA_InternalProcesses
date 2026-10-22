@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2022/09/ProvisioningSchema">
+  <pnp:Preferences Generator="PnP.Framework, Version=1.18.0.0, Culture=neutral, PublicKeyToken=0d501f89f11b748c" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-F971D38D980247E596D3B010C1EE64EC">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-F971D38D980247E596D3B010C1EE64EC" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
+      <pnp:Lists>
+        <pnp:ListInstance Title="LR_LeaveStatus" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/LR_LeaveSetup_Extended" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="20" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/LR_LeaveSetup_Extended/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/LR_LeaveSetup_Extended/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/LR_LeaveSetup_Extended/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{FC83C6C0-F5C4-4C77-B9DC-0F92D967203A}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/LR_LeaveSetup_Extended/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=50">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="ID" Ascending="FALSE" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="ID" />
+                <FieldRef Name="EmployeeCode" />
+                <FieldRef Name="RequestType" />
+                <FieldRef Name="ActionTypeName" />
+                <FieldRef Name="AllocDays" />
+                <FieldRef Name="TakenDays" />
+                <FieldRef Name="ApprovalFlow" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <CustomFormatter />
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field Type="Text" DisplayName="EmployeeCode" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{142784fe-1490-41d5-ab14-9985b7136920}" SourceID="{{listid:LR_LeaveStatus}}" StaticName="EmployeeCode" Name="EmployeeCode" ColName="nvarchar4" RowOrdinal="0" CustomFormatter="" Version="1" />
+            <Field Type="Number" DisplayName="RequestType" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{42f0521a-648c-417b-a994-946c1f8d8e83}" SourceID="{{listid:LR_LeaveStatus}}" StaticName="RequestType" Name="RequestType" ColName="float2" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="ActionTypeName" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{20b6e305-d9d3-49af-bebc-b16ba92176a9}" SourceID="{{listid:LR_LeaveStatus}}" StaticName="ActionTypeName" Name="ActionTypeName" ColName="nvarchar5" RowOrdinal="0" />
+            <Field Type="Number" DisplayName="AllocDays" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{e09cc5ca-231b-4328-bd5e-a0b61a72c8ec}" SourceID="{{listid:LR_LeaveStatus}}" StaticName="AllocDays" Name="AllocDays" ColName="float3" RowOrdinal="0" CustomFormatter="" Percentage="FALSE" Version="1" />
+            <Field Type="Number" DisplayName="TakenDays" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{0411cd42-1969-4e7a-9756-7f3b7e108d4d}" SourceID="{{listid:LR_LeaveStatus}}" StaticName="TakenDays" Name="TakenDays" ColName="float1" RowOrdinal="0" />
+            <Field DisplayName="ApprovalFlow" Format="Dropdown" MaxLength="255" Name="ApprovalFlow" Title="ApprovalFlow" Type="Text" ID="{246edb50-a9f1-4bde-a99c-7456bf84ace1}" SourceID="{{listid:LR_LeaveStatus}}" StaticName="ApprovalFlow" ColName="nvarchar6" RowOrdinal="0">
+              <Default>manager;GM</Default>
+            </Field>
+            <Field ID="{76d13cd2-1bae-45a5-8b74-545b87b65037}" Name="_ColorTag" DisplaceOnUpgrade="TRUE" ShowInFileDlg="FALSE" ReadOnly="TRUE" Type="Text" DisplayName="Color Tag" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="_ColorTag" FromBaseType="TRUE" ColName="nvarchar8" />
+          </pnp:Fields>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="fa564e0f-0c70-4ab9-b863-0177e6ddd247" Name="Title" DisplayName="Title" />
+          </pnp:FieldRefs>
+          <pnp:Security>
+            <pnp:BreakRoleInheritance CopyRoleAssignments="false" ClearSubscopes="false">
+              <pnp:RoleAssignment Principal="i:0#.f|membership|gabi.balaban@itassist.eu" RoleDefinition="Full Control" />
+              <pnp:RoleAssignment Principal="i:0#.f|membership|ita_biz@itassist.eu" RoleDefinition="Full Control" />
+              <pnp:RoleAssignment Principal="c:0t.c|tenant|831f90d1-c41f-4bd0-9800-88d811c28394" RoleDefinition="Read" />
+            </pnp:BreakRoleInheritance>
+          </pnp:Security>
+        </pnp:ListInstance>
+      </pnp:Lists>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>
