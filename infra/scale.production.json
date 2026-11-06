@@ -14,8 +14,8 @@
         "type": "cron",
         "metadata": {
           "timezone": "Europe/Bucharest",
-          "start": "0 8 * * 1-5",
-          "end": "0 20 * * 1-5",
+          "start": "0 9 * * 1-5",
+          "end": "0 18 * * 1-5",
           "desiredReplicas": "1"
         }
       }

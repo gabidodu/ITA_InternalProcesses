@@ -91,7 +91,7 @@ Two saved profiles, both `minReplicas = 0` (max 3, HTTP rule):
 - `infra/scale.testing.json` — scale to zero whenever idle, no schedule. **Active
   now on all three apps** while the unified app is being tested.
 - `infra/scale.production.json` — the same plus a cron rule keeping one replica
-  running Monday–Friday 08:00–20:00 (Europe/Bucharest); outside that window the
+  running Monday–Friday 09:00–18:00 (Europe/Bucharest); outside that window the
   app scales to zero and the first request starts it cold. **Apply when going
   live** (weekends are not covered — change `1-5` to `*` in the cron
   `start`/`end` for every day).

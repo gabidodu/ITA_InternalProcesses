@@ -4,7 +4,7 @@
 
 .DESCRIPTION
     The scaling policy: minReplicas = 0 (scale to zero when idle), plus a cron
-    rule that keeps ONE replica running Monday-Friday 08:00-20:00 Romania time,
+    rule that keeps ONE replica running Monday-Friday 09:00-18:00 Romania time,
     so the business-hours cold start never hits users. Outside those hours the
     app scales to zero; the first request after that starts it from cold.
 
@@ -23,7 +23,7 @@
 .EXAMPLE
     ./Set-ContainerAppScale.ps1 -Profile testing              # check only
     ./Set-ContainerAppScale.ps1 -Profile testing -Apply       # scale to zero, no schedule
-    ./Set-ContainerAppScale.ps1 -Profile production -Apply    # going live: add the 8-20 rule
+    ./Set-ContainerAppScale.ps1 -Profile production -Apply    # going live: add the 9-18 rule
 #>
 [CmdletBinding()]
 param(
